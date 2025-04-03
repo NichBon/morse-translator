@@ -17,7 +17,9 @@ test("reverseMorseTranslate", () => {
     expect(reverseMorseTranslate('----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----')).toBe('01234567890');
     expect(reverseMorseTranslate('-. --- .-.. --- --. -.-- - . ... -')).toBe('NOLOGYTEST');
     expect(reverseMorseTranslate('.- / -- .- ... ... .. ...- . / .--. --- - .- - ---')).toBe('A MASSIVE POTATO');
-    expect(reverseMorseTranslate('.-..-----...')).toBe('Invalid morse characters detected');
+    expect(reverseMorseTranslate('asdf ./-')).toBe('Invalid morse characters were detected');
+    expect(reverseMorseTranslate('.-..-----...')).toBe('Invalid morse characters were detected');
+    expect(reverseMorseTranslate('.-..-----... .......//////')).toBe('Invalid morse characters were detected');
 });
 
 test("inputTypeTest", () => {

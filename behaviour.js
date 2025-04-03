@@ -24,9 +24,6 @@ form.addEventListener('submit', (e) => {
         translationType.textContent = 'Translating English to Morse'
     } else if (regexMorse.test(input)) {
         output = reverseMorseTranslate(input)
-        if (output === 'undefined') {
-            output = "Invalid morse characters were detected";
-        }
         translationType.textContent = 'Translating Morse to English'
     } else {
         output = 'Input must be either all english or all morse'
@@ -48,7 +45,7 @@ let morse = morseTranslate(testString)
 
 console.log(morse)
 
-let reverse = reverseMorseTranslate('.- / -- .- ... ... .. ...- . / .--. --- - .- - ---')
+let reverse = reverseMorseTranslate('asdf ./-')
 
 console.log(reverse)
 

@@ -31,14 +31,17 @@ export const reverseMorseTranslate = (inputString) => {
             const letters = word.split(' ');
             for (const letter of letters) {
                 outputString += `${reverseMorseCode[letter]}`
-            };
+            }
             outputString += ' '
         }
+        if (outputString.includes('undefined')) {
+            return ("Invalid morse characters were detected")
+        };
         outputString = outputString.trim()
         return (outputString)
     } catch (e) {
         console.error('Error in reverseMorseTranslate')
-        return ('Invalid morse characters detected')
+        return ('Unexpected error in reverseMorseTranslate')
     }
 }
 
