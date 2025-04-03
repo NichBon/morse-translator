@@ -10,6 +10,7 @@ test("morseTranslate", () => {
     expect(morseTranslate('1234567890')).toBe('.---- ..--- ...-- ....- ..... -.... --... ---.. ----. -----');
     expect(morseTranslate('emERGency')).toBe('. -- . .-. --. . -. -.-. -.--');
     expect(morseTranslate('A BIG BANANA')).toBe('.- / -... .. --. / -... .- -. .- -. .-');
+    expect(morseTranslate('Two  Spaces')).toBe('- .-- --- / ... .--. .- -.-. . ...');
 });
 
 test("reverseMorseTranslate", () => {
@@ -20,6 +21,7 @@ test("reverseMorseTranslate", () => {
     expect(reverseMorseTranslate('asdf ./-')).toBe('Invalid morse characters were detected');
     expect(reverseMorseTranslate('.-..-----...')).toBe('Invalid morse characters were detected');
     expect(reverseMorseTranslate('.-..-----... .......//////')).toBe('Invalid morse characters were detected');
+    expect(reverseMorseTranslate('- .-- --- /  / ... .--. .- -.-. . ...')).toBe('TWO SPACES');
 });
 
 test("inputTypeTest", () => {

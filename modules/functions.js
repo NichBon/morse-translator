@@ -8,6 +8,7 @@ export const morseTranslate = (inputString) => {
         let outputString = ''
         const words = inputString.split(' ')
         for (const word of words) {
+            if (word === '') continue;
             const letters = word.split('');
             for (const letter of letters) {
                 outputString += `${morseCode[letter.toUpperCase()]} `
@@ -27,6 +28,7 @@ export const reverseMorseTranslate = (inputString) => {
         let outputString = ''
         const words = inputString.split(' / ')
         for (const word of words) {
+            if (word === '') continue;
             const letters = word.split(' ');
             for (const letter of letters) {
                 outputString += `${reverseMorseCode[letter]}`
