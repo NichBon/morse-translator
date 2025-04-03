@@ -43,3 +43,16 @@ export const reverseMorseTranslate = (inputString) => {
         return ('Error in reverseMorseTranslate')
     }
 }
+
+const regexEnglish = /^[A-Za-z0-9 .,]+$/;
+const regexMorse = /^[\.\-\s\/]+$/;
+
+export const inputType = (inputString) => {
+    if (regexEnglish.test(inputString)) {
+        return ('english')
+    } else if (regexMorse.test(inputString)) {
+        return ('morse')
+    } else {
+        return ('invalid')
+    }
+}

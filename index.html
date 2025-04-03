@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morse Translator</title>
     <script src='behaviour.js' defer type="module"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <h1>Morse Translator</h1>
+
+    <form id="input" class="input">
+        <div>Enter text or morse to be translated here:</div>
+        <div>
+            <textarea type='text' name='input-text' id='input-text'></textarea>
+        </div>
+        <div>
+            <button type="submit" id="submit" name="submit">TRANSLATE MY TEXT</button>
+        </div>
+    </form>
+
+    <div id="translation-type">Translation type</div>
+
+
+    <div>
+        <div>Translated text here</div>
+        <textarea type='text' name='output-text' id='output-text' disabled></textarea>
+    </div>
 
 </body>
 
