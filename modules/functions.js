@@ -23,10 +23,13 @@ export const morseTranslate = (inputString) => {
     }
 }
 
+// splits on " \ " or " / " or " | " or "  "
+const morseDelimiter = /(?:\s*[\/|\\]\s*|\s{2})/
+
 export const reverseMorseTranslate = (inputString) => {
     try {
         let outputString = ''
-        const words = inputString.split(' / ')
+        const words = inputString.split(morseDelimiter)
         for (const word of words) {
             if (word === '') continue;
             const letters = word.split(' ');
@@ -46,14 +49,14 @@ export const reverseMorseTranslate = (inputString) => {
     }
 }
 
-const regexEnglish = /^[A-Za-z0-9 .,]+$/;
-const regexMorse = /^[\.\-\s\/]+$/;
+const regexEnglish = /^[A-Za-z0-9 .,?'!/()&:;=+\-_"$@]+$/;
+const regexMorse = /^[\.\-\s\/\|\\]+$/;
 
 export const inputTypeTest = (inputString) => {
-    if (regexEnglish.test(inputString)) {
-        return ('english')
-    } else if (regexMorse.test(inputString)) {
+    if (regexMorse.test(inputString)) {
         return ('morse')
+    } else if (regexEnglish.test(inputString)) {
+        return ('english')
     } else {
         return ('invalid')
     }

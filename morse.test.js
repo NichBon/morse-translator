@@ -11,6 +11,7 @@ test("morseTranslate", () => {
     expect(morseTranslate('emERGency')).toBe('. -- . .-. --. . -. -.-. -.--');
     expect(morseTranslate('A BIG BANANA')).toBe('.- / -... .. --. / -... .- -. .- -. .-');
     expect(morseTranslate('Two  Spaces')).toBe('- .-- --- / ... .--. .- -.-. . ...');
+    expect(morseTranslate("Alex's age is 31 + 6?")).toBe('.- .-.. . -..- .----. ... / .- --. . / .. ... / ...-- .---- / .-.-. / -.... ..--..');
 });
 
 test("reverseMorseTranslate", () => {
@@ -27,8 +28,8 @@ test("reverseMorseTranslate", () => {
 test("inputTypeTest", () => {
     expect(inputTypeTest('.- -... -.-. -.. . ..-. ')).toBe('morse');
     expect(inputTypeTest('asdfa bla9')).toBe('english');
-    expect(inputTypeTest('.- -... -.-. -.. . ..-. asjdf')).toBe('invalid');
-    expect(inputTypeTest('+')).toBe('invalid');
+    expect(inputTypeTest('.- -... -.-. -.. . ..-. asjdf')).toBe('english');
+    expect(inputTypeTest('+')).toBe('english');
     expect(inputTypeTest('*')).toBe('invalid');
-    expect(inputTypeTest('@')).toBe('invalid');
+    expect(inputTypeTest('~')).toBe('invalid');
 });

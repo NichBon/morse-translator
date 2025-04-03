@@ -4,8 +4,8 @@ import {
     inputTypeTest,
 } from "./modules/functions.js";
 
-const regexEnglish = /^[A-Za-z0-9 .,]+$/;
-const regexMorse = /^[\.\-\s\/]+$/;
+const regexEnglish = /^[A-Za-z0-9 .,?'!/()&:;=+\-_"$@]+$/;
+const regexMorse = /^[\.\-\s\/\|\\]+$/;
 
 const form = document.querySelector('form');
 const translationType = document.querySelector('#translation-type');
@@ -26,12 +26,12 @@ inputTextArea.addEventListener('keyup', (e) => {
         return
     };
 
-    if (regexEnglish.test(input)) {
-        output = morseTranslate(input);
-        translationType.textContent = 'Translating English to Morse...'
-    } else if (regexMorse.test(input)) {
+    if (regexMorse.test(input)) {
         output = reverseMorseTranslate(input)
         translationType.textContent = 'Translating Morse to English...'
+    } else if (regexEnglish.test(input)) {
+        output = morseTranslate(input);
+        translationType.textContent = 'Translating English to Morse...'
     } else {
         output = 'Input must be either all english or all morse'
         translationType.textContent = 'Invalid input'
