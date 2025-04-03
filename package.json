@@ -1,0 +1,25 @@
+{
+  "name": "morse-translator",
+  "version": "1.0.0",
+  "description": "This task will require you to create a web page Morse Code translator.\r The User Interface will have to look good but should remain simple (additional features, ie. sounds, lights, etc, should only be added once the MVP has been completed.)",
+  "main": "behaviour.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NichBon/morse-translator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NichBon/morse-translator/issues"
+  },
+  "homepage": "https://github.com/NichBon/morse-translator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}
