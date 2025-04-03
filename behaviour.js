@@ -1,6 +1,7 @@
 import {
     morseTranslate,
     reverseMorseTranslate,
+    inputTypeTest,
 } from "./modules/functions.js";
 
 const regexEnglish = /^[A-Za-z0-9 .,]+$/;
@@ -22,7 +23,10 @@ form.addEventListener('submit', (e) => {
         output = morseTranslate(input);
         translationType.textContent = 'Translating English to Morse'
     } else if (regexMorse.test(input)) {
-        output = reverseMorseTranslate(input);
+        output = reverseMorseTranslate(input)
+        if (output === 'undefined') {
+            output = "Invalid morse characters were detected";
+        }
         translationType.textContent = 'Translating Morse to English'
     } else {
         output = 'Input must be either all english or all morse'

@@ -12,9 +12,7 @@ export const morseTranslate = (inputString) => {
             for (const letter of letters) {
                 outputString += `${morseCode[letter.toUpperCase()]} `
             };
-
             outputString += '/ '
-
         }
         outputString = outputString.slice(0, -3)
         return (outputString)
@@ -40,14 +38,14 @@ export const reverseMorseTranslate = (inputString) => {
         return (outputString)
     } catch (e) {
         console.error('Error in reverseMorseTranslate')
-        return ('Error in reverseMorseTranslate')
+        return ('Invalid morse characters detected')
     }
 }
 
 const regexEnglish = /^[A-Za-z0-9 .,]+$/;
 const regexMorse = /^[\.\-\s\/]+$/;
 
-export const inputType = (inputString) => {
+export const inputTypeTest = (inputString) => {
     if (regexEnglish.test(inputString)) {
         return ('english')
     } else if (regexMorse.test(inputString)) {
