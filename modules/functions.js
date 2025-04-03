@@ -17,10 +17,9 @@ export const morseTranslate = (inputString) => {
         outputString = outputString.slice(0, -3)
         return (outputString)
     } catch (e) {
-        console.error('Error in MorseTranslate')
-        return ('Error in morseTranslate')
+        console.error('Unexpected error in MorseTranslate input: ' + inputString)
+        return ('Oops something went wrong')
     }
-
 }
 
 export const reverseMorseTranslate = (inputString) => {
@@ -40,8 +39,8 @@ export const reverseMorseTranslate = (inputString) => {
         outputString = outputString.trim()
         return (outputString)
     } catch (e) {
-        console.error('Error in reverseMorseTranslate')
-        return ('Unexpected error in reverseMorseTranslate')
+        console.error('Unexpected error in reverseMorseTranslate input: ' + inputString)
+        return ('Oops something went wrong')
     }
 }
 
