@@ -52,7 +52,8 @@ export const morseCode = {
     "_": "..--.-",
     "\"": ".-..-.",
     "$": "...-..-",
-    "@": ".--.-."
+    "@": ".--.-.",
+    'SOS': "...---..." // Distress signal
 }
 
 export const reverseMorseCode = {
@@ -108,5 +109,6 @@ export const reverseMorseCode = {
     "..--.-": "_",
     ".-..-.": "\"",
     "...-..-": "$",
-    ".--.-.": "@"
+    ".--.-.": "@",
+    "...---...": "SOS" // Distress signal
 }

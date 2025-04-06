@@ -9,23 +9,46 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <h1>Morse Translator</h1>
-
-    <form id="input" class="input">
-        <div>Enter text or morse to be translated here:</div>
+<body class="dark">
+    <header>
         <div>
-            <textarea type='text' name='input-text' id='input-text'></textarea>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" id='darkmode-toggle'>
+                <span class="slider round"></span>
+            </label>
+            <div id="darkmode-text">Dark</div>
         </div>
-    </form>
+    </header>
 
-    <div id="translation-type">Enter text or morse to translate</div>
+    <main>
 
+        <div class="morse-main container">
 
-    <div>
-        <div>Translated text here</div>
-        <textarea type='text' name='output-text' id='output-text' disabled></textarea>
-    </div>
+            <div class="morse-main__item">
+                <h1>Morse Translator</h1>
+            </div>
+
+            <div class="morse-main__item">Enter text or morse to be translated here:</div>
+
+            <div>
+                <form id="input" class="input">
+                    <div>
+                        <textarea type='text' name='input-text' id='input-text'></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="morse-main__item">
+                <div id="translation-type">Waiting for text or morse</div>
+            </div>
+
+            <div class="morse-main__item">
+                <textarea type='text' name='output-text' id='output-text' disabled></textarea>
+            </div>
+        </div>
+
+    </main>
 
 </body>
 

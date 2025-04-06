@@ -4,13 +4,17 @@ import {
     inputTypeTest,
 } from "./modules/functions.js";
 
-const regexEnglish = /^[A-Za-z0-9 .,?'!/()&:;=+\-_"$@]+$/;
-const regexMorse = /^[\.\-\s\/\|\\]+$/;
+import {
+    toggleDarkMode,
+} from "./modules/dom.js";
+
+document.querySelector('#darkmode-toggle').addEventListener('click', (e) => {
+    toggleDarkMode()
+})
 
 const form = document.querySelector('form');
 const translationType = document.querySelector('#translation-type');
 const inputTextArea = document.querySelector('#input-text')
-
 const outputArea = document.querySelector('#output-text');
 
 
@@ -19,17 +23,19 @@ console.log(inputTextArea)
 inputTextArea.addEventListener('keyup', (e) => {
     let output = ''
     const formData = new FormData(form);
-    const input = formData.get('input-text')
+    const input = formData.get('input-text').trim()
     if (input === '') {
         outputArea.textContent = null;
-        translationType.textContent = 'Enter text or morse to translate'
+        translationType.textContent = 'Waiting for text or morse'
         return
     };
 
-    if (regexMorse.test(input)) {
+    let inputType = inputTypeTest(input)
+
+    if (inputType === 'morse') {
         output = reverseMorseTranslate(input)
         translationType.textContent = 'Translating Morse to English...'
-    } else if (regexEnglish.test(input)) {
+    } else if (inputType === 'english') {
         output = morseTranslate(input);
         translationType.textContent = 'Translating English to Morse...'
     } else {
@@ -39,28 +45,7 @@ inputTextArea.addEventListener('keyup', (e) => {
     outputArea.textContent = output;
 })
 
-// old input logic using button
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-
-//     let output = ''
-//     const formData = new FormData(form);
-//     const input = formData.get('input-text')
-
-//     if (regexEnglish.test(input)) {
-//         output = morseTranslate(input);
-//         translationType.textContent = 'Translating English to Morse...'
-//     } else if (regexMorse.test(input)) {
-//         output = reverseMorseTranslate(input)
-//         translationType.textContent = 'Translating Morse to English...'
-//     } else {
-//         output = 'Input must be either all english or all morse'
-//         translationType.textContent = 'Invalid input'
-//     }
-//     outputArea.textContent = output;
-// })
-
-// take an input and split it
+// take an input and split it, console logs for testing
 
 let testString = 'at big banana'
 
