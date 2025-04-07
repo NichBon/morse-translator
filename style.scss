@@ -22,11 +22,16 @@
     }
 }
 
-
 textarea {
     display: flex;
     height: 100px;
     width: 400px;
+    font-size: 1.2em;
+}
+
+textarea:disabled {
+    color: black;
+    background-color: rgba(204, 204, 204, 0.87);
 }
 
 // Slider switch styling form w3schools https://www.w3schools.com/howto/howto_css_switch.asp
